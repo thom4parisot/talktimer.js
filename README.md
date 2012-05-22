@@ -57,10 +57,4 @@ talktimer.start();
 </div>
 ```
 
-## Extending
-
-**This part has not been developed yet**.
-
-## Contributing
-
 ## Licence
