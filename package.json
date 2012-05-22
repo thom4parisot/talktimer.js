@@ -1,0 +1,21 @@
+{
+  "author": "Oncle Tom",
+  "name": "talktimer.js",
+  "description": "Because during a talk, you need to show the speaker how many seconds are left.",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --ui tdd"
+  },
+  "engines": {
+    "node": "~0.6.18"
+  },
+  "dependencies": {
+    "shelljs": "0.0.5pre4"
+  },
+  "devDependencies": {
+    "mocha": "~1.0.3",
+    "expect.js": "~0.1.2"
+  },}
