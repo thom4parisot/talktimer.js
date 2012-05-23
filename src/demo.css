@@ -3,6 +3,20 @@ body{
   padding: 0;
 }
 
+button{
+  background: rgba(0, 0, 0, .3);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #000;
+  font-size: 2rem;
+  opacity: .3;
+  padding: 1rem;
+}
+
+  #timer-controls:hover button,
+  #timer-durations:hover button{
+    opacity: 1;
+  }
 
 #timer,
 #timer-controls,
@@ -26,10 +40,16 @@ body{
 }
 
   #timer-controls button{
-    background: rgba(0, 0, 0, .3);
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 3px #000;
-    font-size: 2rem;
-    padding: 1rem;
+  }
+
+#timer-durations{
+  margin-top: -25%;
+  top: 50%;
+  width: 15%;
+}
+
+  #timer-durations button{
+    border-radius: 0 5px 5px 0;
+    font-size: 1.5rem;
+    width: 100%;
   }
