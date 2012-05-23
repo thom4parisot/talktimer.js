@@ -32,6 +32,16 @@ button{
   text-align: center;
   width: 100%
 }
+  #timer[data-timer-weakpoint='medium']{
+    color: blue;
+  }
+  #timer[data-timer-weakpoint='low']{
+    color: orange;
+  }
+  #timer[data-timer-weakpoint='finished']{
+    color: red;
+  }
+
 
 #timer-controls{
   bottom: 5%;
