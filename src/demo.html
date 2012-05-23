@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Talktimer.js Demo</title>
+</head>
+<body>
+
+<div id="timer" data-timer-controls="timer-controls" data-timer-durations="timer-durations">
+  <span data-timer-value="minutes-dozen">0</span>
+  <span data-timer-value="minutes">0</span>
+  <span data-timer-separator>:</span>
+  <span data-timer-value="seconds-dozen">0</span>
+  <span data-timer-value="seconds">0</span>
+</div>
+
+<div id="timer-controls">
+  <button type="button" data-timer-action="toggle" data-timer-start="Start" data-timer-pause="Pause">Start</button>
+  <button type="button" data-timer-action="stop">Stop</button>
+  <button type="button" data-timer-action="reset">Reset</button>
+</div>
+
+<div id="timer-durations">
+  <button type="button" data-timer-duration="300">5 minutes</button>
+  <button type="button" data-timer-duration="1800" data-timer-weakpoints="300">20 minutes</button>
+  <button type="button" data-timer-duration="3600" data-timer-weakpoints="300,1800">40 minutes</button>
+</div>
+
+<script src="../lib/timer.js"></script>
+<script src="../lib/talktimer.js"></script>
+<script>
+var t = new Talktimer('#timer');
+</script>
+</body>
+</html>
