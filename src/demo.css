@@ -1,0 +1,35 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+
+#timer,
+#timer-controls,
+#timer-durations{
+  position: absolute;
+  z-index: 10;
+}
+
+#timer{
+  font-size: 15rem;
+  height: 100%;
+  text-align: center;
+  width: 100%
+}
+
+#timer-controls{
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+  #timer-controls button{
+    background: rgba(0, 0, 0, .3);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #000;
+    font-size: 2rem;
+    padding: 1rem;
+  }
