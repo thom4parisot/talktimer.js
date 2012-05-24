@@ -57,6 +57,3 @@ talktimer.start();
   <button type="button" data-timer-duration="2400">40 minutes</button>
 </div>
 ```
-
-## Licence
-
