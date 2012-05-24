@@ -24,21 +24,35 @@ var talktimer = new Talktimer('#timer');
 </script>
 ```
 
-### setDuration()
+### setDuration(duration)
 
+Sets a new initial value and resets the timer to this value.
 
+### start(duration)
 
-### start()
+Starts the countdown for the sake of your speakers.
+
+If the `duration` argument is set, also give a call to `setDuration` prior to the countdown.
 
 ### toggle()
 
+Toggles between `start` and `pause`, according to the state of the timer.
+
 ### pause()
+
+Pauses the countdown.
 
 ### stop()
 
+Pauses the countdown and sets it to `00:00`.
+
 ### reset()
 
+Resets to the initial value.
+
 ### repaint()
+
+Redraws the timer, applying styles if relevant.
 
 
 ## Skeleton
