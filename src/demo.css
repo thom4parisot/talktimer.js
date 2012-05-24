@@ -43,8 +43,12 @@ button{
   }
 
 
+#timer-controls,
+#timer-durations{
+  bottom: 2%;
+}
+
 #timer-controls{
-  bottom: 5%;
   text-align: center;
   width: 100%;
   z-index: 100;
@@ -55,7 +59,6 @@ button{
 
 #timer-durations{
   margin-top: -25%;
-  bottom: 5%;
   width: 15%;
   z-index: 200;
 }
