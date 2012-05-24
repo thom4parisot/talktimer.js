@@ -1,0 +1,13 @@
+CACHE MANIFEST
+#rev v01
+
+CACHE:
+demo.html
+demo.css
+polyfill.js
+../lib/timer.js
+../lib/talktimer.js
+
+NETWORK:
+*
+
