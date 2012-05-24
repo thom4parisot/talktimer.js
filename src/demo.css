@@ -27,8 +27,8 @@ button{
 }
 
 #timer{
+  font-family: Optima, serif;
   font-size: 25em;
-  height: 100%;
   text-align: center;
   width: 100%
 }
