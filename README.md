@@ -21,9 +21,25 @@ the code, nor extending it.
 <script src="/path/to/talktimer.js"></script>
 <script>
 var talktimer = new Talktimer('#timer');
-talktimer.start();
 </script>
 ```
+
+### setDuration()
+
+
+
+### start()
+
+### toggle()
+
+### pause()
+
+### stop()
+
+### reset()
+
+### repaint()
+
 
 ## Skeleton
 
@@ -38,6 +54,10 @@ talktimer.start();
 </div>
 ```
 
+`data-*` attributes are used to customize the timer experience:
+* `data-timer-controls`: binds the timer to a controls holder with id `#<value>`
+* `data-timer-durations`: binds the timer to a durations holder with id `#<value>`
+
 ### Controls
 
 ```html
@@ -48,6 +68,11 @@ talktimer.start();
 </div>
 ```
 
+`data-*` attributes are used to customize the timer experience:
+* `data-timer-action`: Talktimer API method used on click
+* `data-timer-start`: contains the label used when the "start" action is enabled
+* `data-timer-pasue`: contains the label used when the "pause" action is enabled
+
 ### Durations
 
 ```html
@@ -57,3 +82,6 @@ talktimer.start();
   <button type="button" data-timer-duration="2400">40 minutes</button>
 </div>
 ```
+
+`data-*` attributes are used to customize the timer experience:
+* `data-timer-duration`: initialize the bound talktimer instance with this duration (in seconds)
