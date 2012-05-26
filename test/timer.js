@@ -9,6 +9,10 @@ suite('timer.js', function(){
       expect(function(){
         timer = new Timer();
       }).not.to.throwException();
+
+      setup(function(){
+        timer = new Timer();
+      });
     });
 
     test('expected attributes', function(){
@@ -41,8 +45,6 @@ suite('timer.js', function(){
 
   suite('#emits', function(){
     test('existing event', function(done){
-      timer = new Timer();
-
       timer.on('interval', function(){
         expect(timer.events.interval.length).to.be(1);
         done();
@@ -59,7 +61,21 @@ suite('timer.js', function(){
   });
 
   suite('#start', function(){
+    test('emitting event', function(done){
+      timer.setDuration(5);
 
+      timer.on('start', function(){
+        expect(this.id).to.be.a('number');
+        expect(this.initialDuration).to.be.a(5);
+        expect(this.currentDuration).to.be.a(5);
+
+        this.stop();
+
+        done();
+      });
+
+      timer.start();
+    });
   });
 
   suite('#pause', function(){
