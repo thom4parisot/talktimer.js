@@ -145,7 +145,27 @@ suite('timer.js', function(){
   });
 
   suite('#stop', function(){
+    test('with a duration', function(done){
+      timer.setDuration(5);
 
+      timer.on('stop', function(){
+        expect(this.currentDuration).to.be(0);
+
+        done();
+      });
+
+      expect(timer.currentDuration).to.be(5);
+
+      timer.stop();
+
+      expect(timer.currentDuration).to.be(0);
+    });
+
+    test('without duration', function(){
+      timer.stop();
+
+      expect(timer.currentDuration).to.be(0);
+    });
   });
 
   suite('#toggle', function(){
