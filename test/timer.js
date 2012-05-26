@@ -209,6 +209,23 @@ suite('timer.js', function(){
   });
 
   suite('#sanitizeDuration', function(){
+    test('expected data', function(){
+      expect(function(){
+        expect(Timer.sanitizeDuration(10)).to.be(10);
+        expect(Timer.sanitizeDuration(0)).to.be(0);
+      }).not.to.throwException(TypeError);
+    });
 
+    test('expected exception', function(){
+      expect(function(){
+        Timer.sanitizeDuration(-1);
+        Timer.sanitizeDuration('-1');
+        Timer.sanitizeDuration('1');
+        Timer.sanitizeDuration(null);
+        Timer.sanitizeDuration({});
+        Timer.sanitizeDuration(function(){});
+        Timer.sanitizeDuration([]);
+      }).to.throwException(TypeError);
+    });
   });
 });
