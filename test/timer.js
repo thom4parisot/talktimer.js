@@ -40,11 +40,22 @@ suite('timer.js', function(){
   });
 
   suite('#emits', function(){
+    test('existing event', function(done){
+      timer = new Timer();
 
-  });
+      timer.on('interval', function(){
+        expect(timer.events.interval.length).to.be(1);
+        done();
+      });
 
-  suite('#on', function(){
+      timer.emit('interval');
+    });
 
+    test('unexisting event', function(){
+      expect(function(){
+        timer.emit('foobar');
+      }).not.to.throwException();
+    });
   });
 
   suite('#start', function(){
