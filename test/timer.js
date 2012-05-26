@@ -148,10 +148,7 @@ suite('timer.js', function(){
       });
 
       expect(timer.currentDuration).to.be(5);
-
       timer.stop();
-
-      expect(timer.currentDuration).to.be(0);
     });
 
     test('without duration', function(){
@@ -162,11 +159,40 @@ suite('timer.js', function(){
   });
 
   suite('#toggle', function(){
+    test('from pause to start', function(done){
+      timer.on('toggle', function(){
+        expect(timer.id).to.be.ok();
 
+        done();
+      });
+
+      expect(timer.id).to.be(null);
+      timer.toggle();
+    });
+
+    test('from start to pause', function(done){
+      timer.on('toggle', function(){
+        expect(timer.id).to.be(null);
+
+        done();
+      });
+
+      timer.start(5);
+
+      timer.on('interval', timer.toggle.bind(timer));
+    });
   });
 
   suite('#setDuration', function(){
+    test('expected values', function(){
+      expect(timer.initialDuration).to.be(0);
+      expect(timer.currentDuration).to.be(0);
 
+      timer.setDuration(5);
+
+      expect(timer.initialDuration).to.be(5);
+      expect(timer.currentDuration).to.be(5);
+    });
   });
 
   suite('#onInterval', function(){
