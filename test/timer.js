@@ -61,13 +61,12 @@ suite('timer.js', function(){
   });
 
   suite('#start', function(){
-    test('emitting event', function(done){
+    test('without argument', function(done){
       timer.setDuration(5);
 
       timer.on('start', function(){
-        expect(this.id).to.be.a('number');
-        expect(this.initialDuration).to.be.a(5);
-        expect(this.currentDuration).to.be.a(5);
+        expect(this.initialDuration).to.be(5);
+        expect(this.currentDuration).to.be(5);
 
         this.stop();
 
@@ -75,6 +74,19 @@ suite('timer.js', function(){
       });
 
       timer.start();
+    });
+
+    test('with argument', function(done){
+      timer.on('start', function(){
+        expect(this.initialDuration).to.be(10);
+        expect(this.currentDuration).to.be(10);
+
+        this.stop();
+
+        done();
+      });
+
+      timer.start(10);
     });
   });
 
