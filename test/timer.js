@@ -119,8 +119,29 @@ suite('timer.js', function(){
     });
   });
 
-  suite('#reset', function(){
+  suite('#reset', function(done){
+    test('initial time is set on reset', function(){
+      timer.setDuration(5);
 
+      timer.on('reset', function(){
+        expect(this.id).to.be.ok();
+        expect(this.currentDuration).to.be(5);
+        expect(this.initialDuration).to.be(5);
+
+        timer.stop();
+
+        done();
+      });
+
+      timer.on('interval', function(){
+        expect(this.currentDuration).to.be(4);
+        expect(this.initialDuration).to.be(5);
+
+        timer.reset();
+      });
+
+      timer.start();
+    });
   });
 
   suite('#stop', function(){
