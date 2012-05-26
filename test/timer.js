@@ -111,16 +111,14 @@ suite('timer.js', function(){
         done();
       });
 
-      timer.on('interval', function(){
-        this.pause();
-      });
+      timer.on('interval', timer.pause.bind(timer));
 
       timer.start(5);
     });
   });
 
   suite('#reset', function(done){
-    test('initial time is set on reset', function(){
+    test('initial time is set on reset', function(done){
       timer.setDuration(5);
 
       timer.on('reset', function(){
@@ -133,12 +131,7 @@ suite('timer.js', function(){
         done();
       });
 
-      timer.on('interval', function(){
-        expect(this.currentDuration).to.be(4);
-        expect(this.initialDuration).to.be(5);
-
-        timer.reset();
-      });
+      timer.on('interval', timer.reset.bind(timer));
 
       timer.start();
     });
@@ -177,7 +170,16 @@ suite('timer.js', function(){
   });
 
   suite('#onInterval', function(){
+    test('event called', function(done){
+      timer.on('interval', function(){
+        expect(this.currentDuration).to.be(4);
+        expect(this.initialDuration).to.be(5);
 
+        done();
+      });
+
+      timer.start(5);
+    });
   });
 
   suite('#sanitizeDuration', function(){
