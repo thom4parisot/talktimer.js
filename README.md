@@ -101,3 +101,13 @@ Redraws the timer, applying styles if relevant.
 
 `data-*` attributes are used to customize the timer experience:
 * `data-timer-duration`: initialize the bound talktimer instance with this duration (in seconds)
+
+
+## Testing
+
+The code tries to be heavily unit and functionnaly tested.
+For the moment, due to short time contraint, only `lib/timer.js` is tested… feel free to help :-)
+
+```bash
+npm test
+```
