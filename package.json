@@ -7,7 +7,7 @@
     "url": ""
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --ui tdd"
+    "test": "./node_modules/.bin/mocha --ui tdd --require lib/timer.js"
   },
   "engines": {
     "node": "~0.6.18"
