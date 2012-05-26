@@ -91,7 +91,32 @@ suite('timer.js', function(){
   });
 
   suite('#pause', function(){
+    test('initialization', function(done){
+      timer.on('pause', function(){
+        expect(this.id).to.be(null);
+        expect(this.currentDuration).to.be(5);
 
+        done();
+      });
+
+      timer.start(5);
+      timer.pause();
+    });
+
+    test('after a delay', function(done){
+      timer.on('pause', function(){
+        expect(this.id).to.be(null);
+        expect(this.currentDuration).to.be(4);
+
+        done();
+      });
+
+      timer.on('interval', function(){
+        this.pause();
+      });
+
+      timer.start(5);
+    });
   });
 
   suite('#reset', function(){
