@@ -17,11 +17,29 @@ suite('timer.js', function(){
     });
   });
 
-  suite('#emits', function(){
+  suite('#on', function(){
+    test('basics', function(){
+      expect(timer.events).to.be.an('object');
+      expect(timer.events).to.be.empty();
+    });
 
+    test('assigning functions', function(){
+      expect(function(){
+        timer.on('stuff', function doStuff(){
+          return 'stuffDone';
+        });
+      }).not.to.throwException(TypeError);
+
+      timer.on('stuff', function doStuff2(){});
+      timer.on('interval', function doInterval(){});
+
+      expect(timer.events.stuff.length).to.be(2);
+      expect(timer.events.stuff[0]()).to.be('stuffDone');
+      expect(timer.events.interval.length).to.be(1);
+    });
   });
 
-  suite('#on', function(){
+  suite('#emits', function(){
 
   });
 
