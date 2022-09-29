@@ -1,6 +1,4 @@
-# talktimer.js
-
-[![Build Status](https://secure.travis-ci.org/oncletom/talktimer.js.png?branch=master)](http://travis-ci.org/oncletom/talktimer.js)
+# talktimer.js [![Deploy static content to Pages](https://github.com/thom4parisot/talktimer.js/actions/workflows/main.yml/badge.svg)](https://github.com/thom4parisot/talktimer.js/actions/workflows/main.yml)
 
 Managing a conference is nice. Ensuring talks finish on time is part of the deal you have
 with your audience.
