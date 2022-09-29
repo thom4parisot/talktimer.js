@@ -2,7 +2,7 @@
 <html manifest="offline.appcache">
 <head>
   <title>Talktimer.js Demo</title>
-  <link rel="stylesheet" type="text/css" href="./demo.css" />
+  <link rel="stylesheet" type="text/css" href="./main.css" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
 </head>
@@ -26,13 +26,12 @@
   <button type="button" data-timer-duration="300">5 minutes</button>
   <button type="button" data-timer-duration="1200">20 minutes</button>
   <button type="button" data-timer-duration="2400">40 minutes</button>
+  <button type="button" data-timer-duration="3000">50 minutes</button>
 </div>
 
-<script src="./polyfill.js"></script>
-<script src="../lib/timer.js"></script>
-<script src="../lib/talktimer.js"></script>
-<script>
-(new Talktimer('#timer')).setDuration(817);
+<script type="module">
+  import Talktimer from './talktimer.js'
+  (new Talktimer('#timer')).setDuration(817);
 </script>
 </body>
 </html>

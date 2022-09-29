@@ -1,22 +1,21 @@
 {
-  "author": "Oncle Tom",
+  "author": "Thomas Parisot",
   "name": "talktimer.js",
   "description": "Because during a talk, you need to show the speaker how many seconds are left.",
   "version": "0.0.1",
+  "type": "module",
   "repository": {
-    "url": ""
+    "url": "https://github.com/thom4parisot/talktimer.js"
   },
+  "main": "./src/timer.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --ui tdd"
+    "start": "http-server ./src",
+    "test": "node src/timer.test.js"
   },
   "engines": {
-    "node": "~0.6.18"
-  },
-  "dependencies": {
-    "shelljs": "0.0.5pre4"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
-    "mocha": "~1.0.3",
-    "expect.js": "~0.1.2"
+    "http-server": "^14.1.1"
   }
 }
